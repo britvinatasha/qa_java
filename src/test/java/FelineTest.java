@@ -26,7 +26,7 @@ public class FelineTest {
     }
 
     @Test
-    public void testGetFamily() throws Exception {
+    public void testGetFamily()  {
         String expectedFamily = "Кошачьи";
         assertEquals(expectedFamily, feline.getFamily());
     }

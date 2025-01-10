@@ -6,7 +6,7 @@ public class Lion {
 
     private final FelineInterface felineInterface;
     boolean hasMane;
-    private Feline feline;
+
     public Lion(FelineInterface felineInterface, String sex) throws Exception {
         this.felineInterface = felineInterface;
         if ("Самец".equals(sex)) {
