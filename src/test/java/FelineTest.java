@@ -22,26 +22,30 @@ public class FelineTest {
     public void testEatMeat() throws Exception {
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
         List<String> actualResult = feline.eatMeat();
-        assertEquals(expectedResult, actualResult);
+        assertEquals("Список еды не соответствует хищнику",
+                expectedResult, actualResult);
     }
 
     @Test
     public void testGetFamily()  {
         String expectedFamily = "Кошачьи";
-        assertEquals(expectedFamily, feline.getFamily());
+        assertEquals("Должно вернуться семейство Кошачьих",
+                expectedFamily, feline.getFamily());
     }
 
     @Test
     public void testGetKittens() {
         int expectedResult = 1;
         int actualResult = feline.getKittens();
-        assertEquals(expectedResult, actualResult);
+        assertEquals("Должно вернуться значение 1",
+                expectedResult, actualResult);
     }
 
     @Test
     public void testGetKittensWithParam() {
         int expectedResult = 1;
         int actualResult = feline.getKittens(1);
-        assertEquals(expectedResult, actualResult);
+        assertEquals("Должно вернуться значение 1",
+                expectedResult, actualResult);
     }
 }

@@ -28,7 +28,8 @@ public class CatTest {
     @Test
     public void testGetFood() throws Exception {
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
+        assertEquals("Список еды не соответствует хищнику",
+                List.of("Животные", "Птицы", "Рыба"), cat.getFood());
     }
 
 
@@ -36,6 +37,7 @@ public class CatTest {
     public void testGetSound() {
         String expectedResult = "Мяу";
         String actualResult = cat.getSound();
-        assertEquals(expectedResult, actualResult);
+        assertEquals("Кот издает другой звук",
+                expectedResult, actualResult);
     }
 }

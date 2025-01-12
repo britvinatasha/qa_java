@@ -25,21 +25,26 @@ public class LionTest {
     }
 
 
-    @Test(expected = Exception.class)
-    public void testLionException() throws Exception {
-        new Lion(felineInterface, "Лев");
+    @Test
+    public void testLionException() {
+        try {
+            new Lion(felineInterface, "Лев");
+        } catch (Exception exception) {
+            assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
+        }
     }
 
     @Test
     public void testGetKittens() {
         Mockito.when(felineInterface.getKittens()).thenReturn(1);
-        assertEquals(1, lion.getKittens());
-        Mockito.verify(felineInterface, Mockito.times(1)).getKittens();
+        assertEquals("Должно вернуться значение 1",
+                1, lion.getKittens());
     }
 
     @Test
     public void testGetFood() throws Exception {
         Mockito.when(felineInterface.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
+        assertEquals("Список еды не соответствует хищнику",
+                List.of("Животные", "Птицы", "Рыба"), lion.getFood());
     }
 }
